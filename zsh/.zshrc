@@ -4,22 +4,24 @@
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:~/bin
+export PATH=$PATH:/opt/homebrew/bin
+
 
 # Add homebrew php 7.3
-export PATH="/usr/local/opt/php@7.3/bin:$PATH"
-export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+#export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+#export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="${HOME}/.oh-my-zsh"
+#export ZSH="${HOME}/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -66,9 +68,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions)
+#plugins=(git colored-man-pages zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -79,9 +81,9 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-test -e "/usr/libexec/java_home" && export JAVA_HOME="$(/usr/libexec/java_home)"
+#test -e "/usr/libexec/java_home" && export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # Pass color profile onto SSH without custom sshd_config
 XMODIFIERS=$ITERM_PROFILE
@@ -101,15 +103,15 @@ setopt appendhistory
 
 
 # Terraform autocompletion
-complete -C /usr/local/bin/terraform terraform
+#complete -C /usr/local/bin/terraform terraform
 
 # added by travis gem
-[ -f ${HOME}/.travis/travis.sh ] && source ${HOME}/.travis/travis.sh
+#[ -f ${HOME}/.travis/travis.sh ] && source ${HOME}/.travis/travis.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
-complete -o nospace -C /usr/local/bin/consul consul
-complete -o nospace -C /usr/local/bin/nomad nomad
+#autoload -U +X bashcompinit && bashcompinit
+#complete -o nospace -C /usr/local/bin/vault vault
+#complete -o nospace -C /usr/local/bin/consul consul
+#complete -o nospace -C /usr/local/bin/nomad nomad
