@@ -8,7 +8,8 @@ alias ...='cd ../../'
 alias cp='cp -i'
 alias mkdir='mkdir -pv'
 alias mv='mv -i'
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -22,9 +23,6 @@ alias decrypt='gpg -d'
 #alias encrypt='gpg -e -u "tony@pulickal.net" -r "tony@pulickal.net"
 vimdecrypt() { gpg -d "$1" | vim - -n -i "NONE" "+set filetype=$2"; }
 alias vimd="vimdecrypt"
-
-# SOCKS proxy for chrome
-alias proxy='ssh -D 2345 -C -N sabriel'
 
 # Add an "alert" alias for long running commands.  Use like so:
 # sleep 10; alert
@@ -85,21 +83,4 @@ fingerprint_keys() {
     echo "${FUNCNAME}: Failed to remove temporary file." >&2
     return 1
   fi
-}
-
-# s3 du
-# Usage: s3du <bucket name>
-s3du() {
-  aws s3 ls s3://$1 --recursive  | grep -v -E "(Bucket: |Prefix: |LastWriteTime|^$|--)" | awk 'BEGIN {total=0}{total+=$3}END{print total/1024/1024" MB"}'
-}
-
-ansible-role-init() {
-  for dir in tasks handlers files default vars templates; do mkdir $dir; done
-}
-
-# dynamically switch iterm profiles
-# Usage:  theme-switch light
-#         theme-switch dark
-theme-switch () {
-  echo -e "\033]50;SetProfile=$1\a"; export ITERM_PROFILE=$1;
 }
