@@ -1,15 +1,10 @@
-Host fgh.github.com
-  HostName github.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_fgh
-
 Host github.com
   HostName github.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_tony
 
 Host *
-	IdentityFile          ~/.ssh/id_rsa
+	IdentityFile          ~/.ssh/id_tony
 	Port                  22
 	PreferredAuthentications  publickey,password
 	ServerAliveCountMax		30
