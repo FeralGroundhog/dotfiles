@@ -1,0 +1,1 @@
+brew install cask wget htop tree tmux bandwhich bpytop ctop gping dua-cli docker git neovim jq coreutils gpg 
